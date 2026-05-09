@@ -6,7 +6,7 @@ struct ID3D12Device;
 namespace nx {
     class INxD3DDriver {
     public:
-        virtual ~INxD3DDriver() = 0;
+        virtual ~INxD3DDriver();
     };
 
     class NxD3D12Driver : public INxD3DDriver {

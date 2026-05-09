@@ -9,31 +9,31 @@ namespace nx {
         static INxDXGI *Instance();
 
         // @formatter:off
-        virtual ~INxDXGI() = 0;
-        virtual void Initialize() = 0;
-        virtual void INxDXGI_Unk10() = 0;
-        virtual void DestroySwapChain() = 0;
-        virtual void ResizeSwapChain() = 0;
-        virtual bool IsSwapChainFullScreen() = 0;
-        virtual void SetSwapChainFullScreen() = 0;
-        virtual void INxDXGI_Unk38() = 0;
-        virtual void SetColorSpace() = 0;
-        virtual void INxDXGI_Unk48() = 0;
-        virtual bool Present(void *) = 0;
-        virtual void INxDXGI_Unk58() = 0;
-        virtual void INxDXGI_Unk60() = 0;
-        virtual void INxDXGI_Unk68() = 0;
-        virtual void INxDXGI_Unk70() = 0;
-        virtual void INxDXGI_Unk78() = 0;
-        virtual void INxDXGI_Unk80() = 0;
-        virtual void GetDXGIFactory1() = 0;
-        virtual void INxDXGI_Unk90() = 0;
-        virtual void INxDXGI_Unk98() = 0;
-        virtual void INxDXGI_UnkA0() = 0;
-        virtual void INxDXGI_UnkA8() = 0;
-        virtual void INxDXGI_UnkB0() = 0;
-        virtual void INxDXGI_UnkB8() = 0;
-        virtual void INxDXGI_UnkC0() = 0;
+        virtual ~INxDXGI();
+        virtual void Initialize();
+        virtual void INxDXGI_Unk10();
+        virtual void DestroySwapChain();
+        virtual void ResizeSwapChain();
+        virtual bool IsSwapChainFullScreen();
+        virtual void SetSwapChainFullScreen();
+        virtual void INxDXGI_Unk38();
+        virtual void SetColorSpace();
+        virtual void INxDXGI_Unk48();
+        virtual bool Present(void *);
+        virtual void INxDXGI_Unk58();
+        virtual void INxDXGI_Unk60();
+        virtual void INxDXGI_Unk68();
+        virtual void INxDXGI_Unk70();
+        virtual void INxDXGI_Unk78();
+        virtual void INxDXGI_Unk80();
+        virtual void GetDXGIFactory1();
+        virtual void INxDXGI_Unk90();
+        virtual void INxDXGI_Unk98();
+        virtual void INxDXGI_UnkA0();
+        virtual void INxDXGI_UnkA8();
+        virtual void INxDXGI_UnkB0();
+        virtual void INxDXGI_UnkB8();
+        virtual void INxDXGI_UnkC0();
         // @formatter:on
     };
 
