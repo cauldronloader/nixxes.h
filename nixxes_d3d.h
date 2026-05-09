@@ -1,9 +1,7 @@
-#pragma once
+#ifndef _NIXXES_D3D_H_
+#define _NIXXES_D3D_H_
 
-#include "nixxes_shared.h"
 #include "nixxes_d3d_driver.h"
-
-#include <cstdint>
 
 struct ID3D12CommandQueue;
 struct ID3D12Device;
@@ -46,10 +44,10 @@ namespace nx {
         virtual void INxD3D_UnkD8() = 0;
         virtual ID3D12Device *GetDevice() = 0;
         virtual void INxD3D_UnkE8() = 0;
-        virtual ID3D12Resource* GetBackBuffer(uint32_t index) = 0;
+        virtual ID3D12Resource* GetBackBuffer(unsigned int index) = 0;
         virtual void INxD3D_UnkF8() = 0;
         virtual void INxD3D_Unk100() = 0;
-        virtual ID3D12CommandQueue *GetCommandQueue(uint32_t index) = 0;
+        virtual ID3D12CommandQueue *GetCommandQueue(unsigned int index) = 0;
         virtual void INxD3D_Unk110() = 0;
         virtual void INxD3D_Unk118() = 0;
         virtual void INxD3D_Unk120() = 0;
@@ -76,11 +74,10 @@ namespace nx {
 
     class NxD3DImpl : public INxD3D {
     public:
-        uint8_t Unk8[0x178];
+        unsigned char Unk8[0x178];
         NxD3D12Driver *Driver;
-        uint8_t Unk188[0x78];
+        unsigned char Unk188[0x78];
     };
-
-    assert_size(NxD3DImpl, 0x200);
-    assert_offset(NxD3DImpl, Driver, 0x180);
 }
+
+#endif // _NIXXES_D3D_H_

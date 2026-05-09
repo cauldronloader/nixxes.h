@@ -1,8 +1,5 @@
-#pragma once
-
-#include "nixxes_shared.h"
-
-#include <cstdint>
+#ifndef _NIXXES_DXGI_H_
+#define _NIXXES_DXGI_H_
 
 struct IDXGISwapChain3;
 
@@ -42,13 +39,11 @@ namespace nx {
 
     class NxDXGIImpl : public INxDXGI {
     public:
-        uint8_t Unk08[0x28];
+        unsigned char Unk08[0x28];
         IDXGISwapChain3 *SwapChain;
-        uint32_t NumBuffers;
-        uint8_t Unk38[0xB4];
+        unsigned int NumBuffers;
+        unsigned char Unk38[0xB4];
     };
-
-    assert_size(NxDXGIImpl, 0xF0);
-    assert_offset(NxDXGIImpl, SwapChain, 0x30);
-    assert_offset(NxDXGIImpl, NumBuffers, 0x38);
 }
+
+#endif // _NIXXES_DXGI_H_

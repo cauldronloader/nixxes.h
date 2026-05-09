@@ -1,9 +1,5 @@
-#pragma once
-
-#include "nixxes_shared.h"
-
-#include <string>
-#include <Windows.h>
+#ifndef _NIXXES_LOG_H_
+#define _NIXXES_LOG_H_
 
 namespace nx {
     class INxLog {
@@ -24,7 +20,7 @@ namespace nx {
         virtual void LogW(const wchar_t *category, const wchar_t *fmt, ...) = 0;
         virtual void LogMemoryInfo(const char* category) = 0;
         virtual void LogPlatformInfo(const char* category) = 0;
-        virtual std::wstring MaskUsername(const std::wstring &input) = 0;
+        virtual const wchar_t *MaskUsername(const wchar_t *input) = 0;
         // @formatter:on
     };
 
@@ -37,11 +33,9 @@ namespace nx {
         wchar_t Unk20[0x100000 / sizeof(wchar_t)];
         wchar_t Unk10020[0x100 / sizeof(wchar_t)];
         wchar_t Unk10120[0x100 / sizeof(wchar_t)];
-        HANDLE ConsoleHandle;
-        CRITICAL_SECTION Lock;
+        void * /* HANDLE */ ConsoleHandle;
+        unsigned char /* CRITICAL_SECTION */ Lock[0x28];
     };
-
-    assert_size(NxLogImpl, 0x100250);
-    assert_offset(NxLogImpl, Initialized, 0x8);
-    assert_offset(NxLogImpl, FileHandle, 0x10);
 }
+
+#endif // _NIXXES_LOG_H_

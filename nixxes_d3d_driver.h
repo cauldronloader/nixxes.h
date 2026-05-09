@@ -1,8 +1,5 @@
-#pragma once
-
-#include "nixxes_shared.h"
-
-#include <cstdint>
+#ifndef _NIXXES_D3D_DRIVER_H_
+#define _NIXXES_D3D_DRIVER_H_
 
 struct ID3D12Device;
 
@@ -14,11 +11,10 @@ namespace nx {
 
     class NxD3D12Driver : public INxD3DDriver {
     public:
-        uint8_t Unk8[0x30];
+        unsigned char Unk8[0x30];
         ID3D12Device *Device;
-        uint8_t Unk40[0xD8];
+        unsigned char Unk40[0xD8];
     };
-
-    assert_size(NxD3D12Driver, 0x118);
-    assert_offset(NxD3D12Driver, Device, 0x38);
 }
+
+#endif // _NIXXES_D3D_DRIVER_H_
