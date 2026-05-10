@@ -2,6 +2,7 @@
 #define _NIXXES_DXGI_H_
 
 struct IDXGISwapChain3;
+struct IDXGIFactory1;
 
 namespace nx {
     class INxDXGI {
@@ -39,7 +40,11 @@ namespace nx {
 
     class NxDXGIImpl : public INxDXGI {
     public:
-        unsigned char Unk08[0x28];
+        bool bInitialized;
+        void *pUnk8;
+        void *hDxgiModule /* HMODULE */;
+        IDXGIFactory1 *mDxgiFactoryA;
+        IDXGIFactory1 *mDxgiFactoryB;
         IDXGISwapChain3 *SwapChain;
         unsigned int NumBuffers;
         unsigned char Unk38[0xB4];
